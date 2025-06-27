@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="~{admin/layout/layout_main}">
+	
+	<head>
+		<meta name="description" content="한국스마트정보교육원 ksmybatis" />
+	</head>
+	
+	<th:block layout:fragment="jsFile">
+	</th:block>
+	
+	<th:block layout:fragment="jsScript">
+	</th:block>
+	
+	<th:block layout:fragment="contents">
+		
+		<section class="content-main">
+            <div class="row">
+                <div class="col-9">
+                    <div class="content-header">
+                        <h2 class="content-title">상품 등록</h2>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <h4>Basic</h4>
+                        </div>
+                        <div class="card-body">
+                            <form>
+                                <div class="row mb-4">
+                                    <div class="col-lg-6">
+                                        <label for="product_code" class="form-label">상품 코드</label>
+                                        <input type="text" placeholder="Type here" class="form-control"
+                                         id="productCode" name="productCode" />
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label for="product_name" class="form-label">상품 명</label>
+                                        <input type="text" placeholder="Type here" class="form-control" 
+                                        id="productName" name="productName" />
+                                    </div>
+                                </div>
+                                <div class="row mb-4">
+                                    <div class="col-lg-6">
+                                        <label for="vendor_name" class="form-label">판매처</label>
+                                        <input type="text" placeholder="Type here" class="form-control"
+                                        id="vendorCode" name="vendorCode"/>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label class="form-label">가격</label>
+                                        <input placeholder="$" type="text" class="form-control"
+                                        id="productUnitPrice" name="productUnitPrice" />
+                                    </div>
+                              		<div class="col-lg-6">
+                                        <label class="form-label">등록 시간</label>
+                                        <input placeholder="$" type="text" class="form-control"
+                                        id="productRegDate" name="productRegDate" />
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="mb-4">
+                                    <label class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" />
+                                        <span class="form-check-label"> Make a template </span>
+                                    </label>
+                                </div>
+                                
+                                <div class="text-center"> <button class="btn btn-light rounded font-sm mr-5 text-body hover-up">Save to draft</button>
+                                    <button class="btn btn-md rounded font-sm hover-up">Publish</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        </th:block>
+	
+	
+</html>

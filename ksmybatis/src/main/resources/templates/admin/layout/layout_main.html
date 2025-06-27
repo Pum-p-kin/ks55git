@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+	<head>
+		<meta charset="utf-8" />
+		<title th:text="${title}">Nest Dashboard</title>
+		<meta http-equiv="x-ua-compatible" content="ie=edge" />
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="shortcut icon" type="image/x-icon" th:href="@{/manage/assets/imgs/theme/favicon.svg}" />
+		<link href="/manage/assets/css/main.css?v=1.1" rel="stylesheet" type="text/css" />
+	</head>
+
+	<body>
+		<div class="screen-overlay"></div>
+
+		<aside th:replace="~{admin/fragments/aside :: asideFragment}"></aside>
+		<main class="main-wrap">
+			<header th:replace="~{admin/fragments/header :: headerFragment}"></header>
+			<section class="content-main">
+				<th:block layout:fragment="contents">
+				</th:block>
+				</section>
+
+			<footer th:replace="~{admin/fragments/footer :: footerFragment2}"></footer>
+			</main>
+
+		<script th:src="@{/manage/assets/js/vendors/jquery-3.6.0.min.js}"></script>
+		<script th:src="@{/manage/assets/js/vendors/bootstrap.bundle.min.js}"></script>
+		<script th:src="@{/manage/assets/js/vendors/select2.min.js}"></script>
+		<script th:src="@{/manage/assets/js/vendors/perfect-scrollbar.js}"></script>
+		<script th:src="@{/manage/assets/js/vendors/jquery.fullscreen.min.js}"></script>
+
+		<th:block layout:fragment="jsFile"></th:block>
+
+		<script th:src="@{/manage/assets/js/main.js?v=1.1}" type="text/javascript"></script>
+
+		<th:block layout:fragment="jsScript"></th:block>
+	</body>
+</html>

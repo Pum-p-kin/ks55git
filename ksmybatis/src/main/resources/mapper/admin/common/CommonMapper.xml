@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="ksmybatis.admin.common.mapper.CommonMapper">
+  	<resultMap 	type="ksmybatis.admin.common.domain.CommonCode" 			id="commonResultMap">
+	  	<id 	column="comm_group_cd" 			property="commonGroupCode"/>
+	  	<id 	column="comm_cd" 				property="commonCode"/>
+	  	<result column="comm_group_nm" 			property="commonGroupName"/>
+	  	<result column="comm_group_eng_nm" 		property="commonGroupEngName"/>
+	  	<result column="comm_nm" 				property="commonName"/>
+	  	<result column="comm_eng_nm" 			property="commonEngName"/>
+	  	<result column="comm_cd_use_yn" 		property="commonCodeUseYN"/>
+	  	<result column="comm_cd_reg_date"		property="commonCodeRegDate"/>
+  	</resultMap>
+  	<select id="getCommonCodeListByGroupCode" parameterType="String" resultMap="commonResultMap">
+  	/* 디비공간 주석 */
+  	/* 회원 목록 조회 */
+  	SELECT 
+	  	comm_group_cd,
+	  	comm_cd,
+	  	comm_group_nm,
+	  	comm_group_eng_nm,
+	  	comm_nm,
+	  	comm_eng_nm,
+	  	comm_cd_use_yn,
+	  	comm_cd_reg_date	
+	from
+			comm_code cc inner join comm_group_code cgc
+			using(comm_group_cd)
+		where 
+			cgc.comm_group_cd  = #{groupCode};
+  	</select>
+  	
+  </mapper> 
